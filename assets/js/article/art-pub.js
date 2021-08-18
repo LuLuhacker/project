@@ -39,6 +39,8 @@ $(function () {
           return layer.msg("发布文章失败");
         }
         layer.msg("发布文章成功");
+
+        window.parent.yi("文章列表");
         //跳转到文章列表
         location.href = "art-list.html";
       },
