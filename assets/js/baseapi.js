@@ -16,7 +16,7 @@ $.ajaxPrefilter(function (options) {
     // 判断是否输入信息跳转,阻止强制跳转
     options.complete = function (res) {
         console.log(res);
-        if (res.responseJSON.code === 1) {
+        if (res.responseJSON.code === 1 && res.responseJSON.message === "身份认证失败!") {
             //首先清空本地存储
             localStorage.removeItem('token')
             //跳转到登录页面
